@@ -1,0 +1,38 @@
+@use '../styles/_vars' as v
+
+@function tracking( $target )
+    @return ($target / 1000) * 1em
+
+@mixin tracking( $target )
+    letter-spacing: tracking( $target )
+
+.centerbox
+    display: grid
+    place-items: center
+    height: 100%
+
+.name
+    text-align: center
+
+.firstname
+    font-family: libre baskerville
+    font-weight: 700
+    font-size: 5em
+    margin-bottom: -.1em
+
+.lastname
+    font-family: libre baskerville
+    font-weight: 400
+    font-size: 1em
+    margin-right: -1.9em
+    @include tracking(1900)
+
+.iconBar
+    display: flex
+    justify-content: space-around
+    align-items: flex-end
+
+.icons
+    color: v.$fg-color
+    :hover
+        color: v.$slategray

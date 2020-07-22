@@ -1,4 +1,7 @@
-Font: Kantumruy
+Favicon Font: Kantumruy
+Needed to add global.d.ts file to resolve typescript error when importing sass
+That fix requires esModuleInterop in tsconfig
+node-sass doesn't support the @use rule of dart sass, only @import which is deprecated
 
 ## Project Structure
 

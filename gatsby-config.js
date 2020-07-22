@@ -8,12 +8,19 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-plugin-sass`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        implementation: require("sass"),
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `data`,
+        path: `${__dirname}/src`,
+      },
+    },
+    `gatsby-transformer-pdf`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -29,6 +36,16 @@ module.exports = {
       },
     },
     `gatsby-plugin-typescript`,
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `libre baskerville:400, 700b`,
+          `source sans pro:300,400,400i,700`, // you can also specify font weights and styles
+        ],
+        display: "swap",
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
