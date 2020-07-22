@@ -11,7 +11,7 @@ const IndexPage = () => (
   <div className={styles.centerbox}>
     <SEO title="Home" />
     <div>
-      <div className={name}>
+      <div className={styles.name}>
         <h1 className={styles.firstname}>Halston</h1>
         <h2 className={styles.lastname}>Sellentin</h2>
       </div>
