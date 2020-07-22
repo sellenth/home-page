@@ -1,17 +1,46 @@
-import * as React from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
-import { Document } from "react-pdf"
 
-import Layout from "../components/layout"
+import styles from "./index.module.sass"
+import { Button } from "react-bootstrap"
+import { Document, Page } from "react-pdf"
 import SEO from "../components/seo"
+import { FaHome } from "react-icons/fa"
 
-const WrittenSample = () => (
-  <Layout>
-    <SEO title="Page two" />
-    <h1>Hi from the second page</h1>
-    <Document file="../content/written_sample.pdf" />
-    <Link to="/">Go back to the homepage</Link>
-  </Layout>
-)
+function WrittenSample() {
+  const [page, setPage] = useState(1)
+
+  function nextPage() {
+    if (page < 4) {
+      setPage(page + 1)
+    }
+  }
+
+  function prevPage() {
+    if (page > 1) {
+      setPage(page - 1)
+    }
+  }
+
+  return (
+    <div className={styles.centerbox}>
+      <SEO title="Written Sample" />
+      <Document file="/written_sample.pdf">
+        <Page pageNumber={page} />
+      </Document>
+      <div className={styles.pageControl}>
+        <Button className={styles.pageButton} onClick={prevPage}>
+          &larr;
+        </Button>
+        <Link to="/">
+          <FaHome color={"#3c3a40"} size={"2.9em"} className={styles.home} />
+        </Link>
+        <Button className={styles.pageButton} onClick={nextPage}>
+          &rarr;
+        </Button>
+      </div>
+    </div>
+  )
+}
 
 export default WrittenSample

@@ -25,7 +25,7 @@ const IndexPage = () => (
           <a href="https://www.github.com/sellenth" title="Check out my Github">
             <FaGithubSquare />
           </a>
-          <Link to="/sample" title="View a writing sample">
+          <Link to="/written-sample" title="View a writing sample">
             <FaFileWord />
           </Link>
           <Link to="/resume" title="My current resume">
