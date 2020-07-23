@@ -3,7 +3,8 @@ import { Link } from "gatsby"
 
 import SEO from "../components/seo"
 import styles from "./index.module.sass"
-import { FaGithubSquare, FaFileWord } from "react-icons/fa"
+import { FaGithubSquare } from "react-icons/fa"
+import { GoTasklist } from "react-icons/go"
 import { IoIosPaper } from "react-icons/io"
 import { IconContext } from "react-icons/lib"
 
@@ -25,10 +26,10 @@ const IndexPage = () => (
           <a href="https://www.github.com/sellenth" title="Check out my Github">
             <FaGithubSquare />
           </a>
-          <Link to="/written-sample" title="View a writing sample">
-            <FaFileWord />
-          </Link>
           <Link to="/resume" title="My current resume">
+            <GoTasklist />
+          </Link>
+          <Link to="/written-sample" title="View a writing sample">
             <IoIosPaper />
           </Link>
         </IconContext.Provider>
