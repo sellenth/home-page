@@ -6,10 +6,8 @@ import { Button } from "react-bootstrap"
 import { Document, Page } from "react-pdf"
 import SEO from "../components/seo"
 import { FaHome } from "react-icons/fa"
-import useWindowDimensions from "../hooks/useWindowDimensions"
 
 function WrittenSample() {
-  const { height, width } = useWindowDimensions()
   const [pageState, setPage] = useState({
     currPage: 1,
     numPages: 1,
@@ -37,6 +35,7 @@ function WrittenSample() {
     <div className={styles.centerbox}>
       <SEO title="Written Sample" />
       <Document
+        className={styles.document}
         file="/written_sample.pdf"
         onLoadSuccess={updateNumPages}
         loading={
@@ -46,8 +45,10 @@ function WrittenSample() {
         }
       >
         <Page
-          width={Math.min(width, height * 0.7)}
+          renderTextLayer={false}
+          className={styles.pdfpage}
           pageNumber={currPage}
+          scale={2.0}
           renderAnnotationLayer={false}
         />
       </Document>

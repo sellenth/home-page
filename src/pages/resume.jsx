@@ -5,17 +5,25 @@ import styles from "./index.module.sass"
 import { Document, Page } from "react-pdf"
 import SEO from "../components/seo"
 import { FaHome } from "react-icons/fa"
-import useWindowDimensions from "../hooks/useWindowDimensions"
 
 function Resume() {
-  const { height, width } = useWindowDimensions()
   return (
     <div className={styles.centerbox}>
       <SEO title="Resume" />
-      <Document file="/resume.pdf">
+      <Document
+        className={styles.document}
+        file="/resume.pdf"
+        loading={
+          <div className="spinner-border text-secondary" role="status">
+            <span className="sr-only">Loading...</span>
+          </div>
+        }
+      >
         <Page
+          renderTextLayer={false}
+          className={styles.pdfpage}
           pageNumber={1}
-          width={Math.min(width, height * 0.7)}
+          scale={2.0}
           renderAnnotationLayer={false}
         />
       </Document>
