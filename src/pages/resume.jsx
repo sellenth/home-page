@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 
 import styles from "./index.module.sass"
-import { Document, Page } from "react-pdf"
+import { Document, Page } from "react-pdf/dist/entry.webpack"
 import SEO from "../components/seo"
 import { FaHome } from "react-icons/fa"
 
