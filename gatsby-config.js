@@ -4,7 +4,7 @@ module.exports = {
     title: `My Page`,
     description: `My landing page for the internet`,
     author: `Halston Sellentin`,
-    siteUrl: `www.halstonsellentin.com`,
+    siteUrl: `halstonsellentin.com`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
