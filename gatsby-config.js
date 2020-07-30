@@ -4,6 +4,7 @@ module.exports = {
     title: `My Page`,
     description: `My landing page for the internet`,
     author: `Halston Sellentin`,
+    siteUrl: `www.halstonsellentin.com`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -46,6 +47,15 @@ module.exports = {
         display: "swap",
       },
     },
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://www.halstonsellentin.com",
+        sitemap: "https://www.halstonsellentin.com/sitemap.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
+    },
+    "gatsby-plugin-sitemap",
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
